@@ -26,7 +26,35 @@
         <p>Offline-ready • Secure • Transparent</p>
       </div>
     </footer>
-  </div>
+</div>
+  
+  <!-- Google Analytics (replace with your GA tracking ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      'custom_map': {'custom_parameter_1': 'service_type'}
+    });
+    
+    // Track service searches
+    function trackServiceSearch(query, filters = {}) {
+      gtag('event', 'search', {
+        'search_term': query,
+        'custom_parameter_1': filters.agency || 'all',
+        'custom_dimension_1': filters.region || 'all'
+      });
+    }
+    
+    // Track representative searches
+    function trackRepSearch(district) {
+      gtag('event', 'representative_search', {
+        'custom_parameter_1': district
+      });
+    }
+  </script>
+  
   <script src="assets/js/app.js"></script>
 </body>
 </html>

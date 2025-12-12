@@ -1,4 +1,8 @@
-<?php require_once __DIR__ . '/includes/header.php'; ?>
+<?php 
+$pageTitle = 'SaloneHub | Find Sierra Leone Government Services in 3 Clicks';
+$pageDescription = 'Search and access Sierra Leone government services instantly. Find passport, driver\'s license, NIN, business registration, voter registration and more with verified information on fees and requirements.';
+require_once __DIR__ . '/includes/header.php'; 
+?>
 
 <section class="hero">
   <div class="hero-content">

@@ -1,24 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
-  --primary: #1E3A8A;
-  --primary-dark: #1E40AF;
-  --primary-light: #3B82F6;
-  --accent: #F59E0B;
-  --accent-light: #FBBF24;
-  --accent-dark: #D97706;
-  --bg-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+  --primary-teal: #0F4C5C;
+  --accent-gold: #F4A261;
+  --clean-white: #F8FAFC;
+  --dark-bg: #1a1a1a;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-light: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --gradient-primary: linear-gradient(135deg, #0F4C5C 0%, #2E8B8B 100%);
+  --gradient-accent: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Legacy variables for compatibility */
+  --primary: #0F4C5C;
+  --accent: #F4A261;
+  --bg-gradient: linear-gradient(135deg, #0F4C5C 0%, #2E8B8B 100%);
   --glass: rgba(255, 255, 255, 0.1);
   --glass-hover: rgba(255, 255, 255, 0.15);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-border-hover: rgba(245, 158, 11, 0.4);
+  --glass-border-hover: rgba(244, 162, 97, 0.4);
   --text: #E2E8F0;
   --text-bright: #F8FAFC;
   --muted: #94A3B8;
   --muted-dark: #64748B;
   --card: rgba(255, 255, 255, 0.08);
   --success: #10B981;
-  --warning: #F59E0B;
+  --warning: #F4A261;
   --error: #EF4444;
-  --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.3);
+  --shadow-glow: 0 0 20px rgba(244, 162, 97, 0.3);
 }
 
 * {

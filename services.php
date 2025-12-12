@@ -1,4 +1,6 @@
 <?php
+$pageTitle = 'Government Services Directory | SaloneHub';
+$pageDescription = 'Browse complete directory of Sierra Leone government services. Get verified information on fees, processing times, required documents, and contact details for passports, driver licenses, NIN, business registration, and more.';
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/header.php';
 

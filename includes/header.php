@@ -8,15 +8,56 @@ if (session_status() === PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SaloneHub | Civic Services Portal</title>
-    <meta name="description" content="Find Sierra Leone government services, requirements, and representatives instantly on SaloneHub." />
-    <meta property="og:title" content="SaloneHub | Sierra Leone Government Services" />
-    <meta property="og:description" content="Discover verified services, fees, documents, and contacts across Sierra Leone." />
+    <title><?php echo $pageTitle ?? 'SaloneHub | Sierra Leone Government Services Portal'; ?></title>
+    <meta name="description" content="<?php echo $pageDescription ?? 'Find Sierra Leone government services, requirements, and representatives instantly. Access verified information on fees, documents, processing times, and contact details for all civic services.'; ?>" />
+    <meta name="keywords" content="Sierra Leone, government services, civic portal, voter registration, national ID, business registration, passport, driver license, representatives, MPs, local council" />
+    <meta name="author" content="SaloneHub" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://salonehub.demo" />
-    <meta property="og:image" content="assets/images/og-card.png" />
+    <meta property="og:url" content="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
+    <meta property="og:title" content="<?php echo $pageTitle ?? 'SaloneHub | Sierra Leone Government Services Portal'; ?>" />
+    <meta property="og:description" content="<?php echo $pageDescription ?? 'Find Sierra Leone government services, requirements, and representatives instantly. Access verified information on fees, documents, processing times, and contact details.'; ?>" />
+    <meta property="og:image" content="<?php echo 'https://' . $_SERVER['HTTP_HOST']; ?>/assets/images/og-card.png" />
+    <meta property="og:site_name" content="SaloneHub" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
+    <meta property="twitter:title" content="<?php echo $pageTitle ?? 'SaloneHub | Sierra Leone Government Services Portal'; ?>" />
+    <meta property="twitter:description" content="<?php echo $pageDescription ?? 'Find Sierra Leone government services, requirements, and representatives instantly.'; ?>" />
+    <meta property="twitter:image" content="<?php echo 'https://' . $_SERVER['HTTP_HOST']; ?>/assets/images/og-card.png" />
+    
+    <!-- PWA -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1E3A8A" />
+    <meta name="theme-color" content="#0F4C5C" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SaloneHub" />
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GovernmentOrganization",
+      "name": "SaloneHub",
+      "description": "Sierra Leone Government Services Portal",
+      "url": "<?php echo 'https://' . $_SERVER['HTTP_HOST']; ?>",
+      "logo": "<?php echo 'https://' . $_SERVER['HTTP_HOST']; ?>/assets/images/icon-512.png",
+      "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SL",
+        "addressLocality": "Freetown"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Sierra Leone"
+      }
+    }
+    </script>
     <link rel="apple-touch-icon" href="assets/images/icon-192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

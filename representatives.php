@@ -1,4 +1,6 @@
 <?php
+$pageTitle = 'Find Your Representatives | SaloneHub';
+$pageDescription = 'Connect with Sierra Leone government representatives. Find MPs, local council members, and elected officials by district. Get contact information to reach your representatives directly.';
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/header.php';
 

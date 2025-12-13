@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-proxy: {
+    proxy: {
       '/api': {
         target: 'http://localhost:80/salonehub/backend/api',
         changeOrigin: true,

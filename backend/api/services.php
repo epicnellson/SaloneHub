@@ -24,17 +24,18 @@ try {
             $sql = "SELECT * FROM services WHERE 1=1";
             $params = [];
             
-            if ($search) {
-                $sql .= " AND (name LIKE :search OR agency LIKE :search)";
-                $params[':search'] = "%{$search}%";
+            if (!empty($search)) {
+                $sql .= " AND (name LIKE ? OR agency LIKE ?)";
+                $params[] = "%{$search}%";
+                $params[] = "%{$search}%";
             }
-            if ($agency) {
-                $sql .= " AND agency = :agency";
-                $params[':agency'] = $agency;
+            if (!empty($agency)) {
+                $sql .= " AND agency = ?";
+                $params[] = $agency;
             }
-            if ($region) {
-                $sql .= " AND region = :region";
-                $params[':region'] = $region;
+            if (!empty($region)) {
+                $sql .= " AND region = ?";
+                $params[] = $region;
             }
             
             $sql .= " ORDER BY last_verified IS NULL, last_verified DESC";

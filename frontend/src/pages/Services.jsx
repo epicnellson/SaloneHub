@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, X, FileText, MapPin, Phone, AlertTriangle } from 'lucide-react'
+import { Search, X, FileText, MapPin, Phone, AlertTriangle, Printer } from 'lucide-react'
 import { api } from '../api/api'
 import { useSearchParams } from 'react-router-dom'
 
@@ -25,6 +25,10 @@ export default function Services() {
 
   const closeModal = () => {
     setSelectedService(null)
+  }
+
+  const handlePrint = () => {
+    window.print()
   }
 
   return (
@@ -135,19 +139,29 @@ export default function Services() {
               onClick={(e) => e.stopPropagation()}
               className="glass rounded-3xl p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto"
             >
-              <button
-                onClick={closeModal}
-                className="absolute top-6 right-6 p-2 rounded-lg glass-hover text-white hover:text-accent"
-              >
-                <X size={24} />
-              </button>
-
-              <div className="mb-6">
-                <p className="text-accent text-sm uppercase tracking-wider mb-2">SERVICE</p>
-                <h2 className="text-3xl font-bold mb-2">{selectedService.name}</h2>
-                <p className="text-gray-400">
-                  Agency: {selectedService.agency} | Verified: {selectedService.last_verified || 'N/A'}
-                </p>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex-1">
+                  <p className="text-accent text-sm uppercase tracking-wider mb-2">SERVICE</p>
+                  <h2 className="text-3xl font-bold mb-2">{selectedService.name}</h2>
+                  <p className="text-gray-400">
+                    Agency: {selectedService.agency} | Verified: {selectedService.last_verified || 'N/A'}
+                  </p>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={handlePrint}
+                    className="p-3 rounded-lg glass-hover text-white hover:text-accent transition-colors"
+                    title="Print Checklist"
+                  >
+                    <Printer size={24} />
+                  </button>
+                  <button
+                    onClick={closeModal}
+                    className="p-3 rounded-lg glass-hover text-white hover:text-accent transition-colors"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 mb-6">
